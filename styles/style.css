@@ -1,0 +1,151 @@
+:root {
+  --off-white: rgb(251, 250, 250);
+  --main-theme: rgba(26, 182, 157, 1); 
+  --sec-clr: rgb(15, 146, 111);
+  --white-clr: rgb(255, 255, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'General Sans', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--off-white);
+  height: 75px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-logo img {
+  height: 80px;
+  width: 120px;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: rgb(15, 14, 14);
+  text-decoration: none;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  background-color: rgb(199, 199, 199);
+  border-radius: 4px;
+}
+
+.form-container {
+  background-color: var(--white-clr);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 60px auto;
+}
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.form-group button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--main-theme);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.form-group button:hover {
+  background-color: var(--sec-clr);
+}
+
+.message {
+  text-align: center;
+  margin-top: 20px;
+  display: none;
+  color: var(--sec-clr);
+  font-size: 18px;
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  color: var(--main-theme);
+  display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.9);
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+  }
+
+  .nav-links.nav-active {
+      display: flex;
+  }
+
+  .nav-links li {
+      margin: 20px 0;
+  }
+
+  .menu-icon {
+      display: flex;
+      z-index: 2;
+      margin-right: 30px;
+  }
+  
+  .nav-logo {
+    margin-left: 30px;
+  }
+}
